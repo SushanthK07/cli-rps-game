@@ -54,8 +54,9 @@ const startGame = async (userDetails) => {
   if (playAgain) {
     console.log(chalk.bgMagentaBright("Let's play again!"));
     await startGame(userDetails);
+  } else {
+    console.log(chalk.bgRed("Goodbye!"));
   }
-  console.log(chalk.bgRed("Goodbye!"));
 };
 
 export default startGame;
