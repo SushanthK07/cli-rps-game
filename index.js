@@ -1,11 +1,9 @@
 #!/usr/bin/env node
 
-import chalk from "chalk";
 import getUserDetails from "./utils/getUserDetails.mjs";
 import startGame from "./utils/gameUtils.mjs";
+import welcomeUser from "./utils/welcomeUser.mjs";
 
 const userDetails = await getUserDetails();
-console.log(chalk.bgGreen(`Hi ${userDetails.username}`));
-console.log(chalk.bold(`You're ${userDetails.age} years old`));
-
+await welcomeUser(userDetails);
 await startGame(userDetails);
