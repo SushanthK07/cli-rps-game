@@ -7,11 +7,11 @@ const getUserDetails = async () => {
       name: "username",
       message: "Enter your username",
     },
-    {
-      type: "number",
-      name: "age",
-      message: "Enter your age",
-    },
+    // {
+    //   type: "number",
+    //   name: "age",
+    //   message: "Enter your age",
+    // },
   ]);
   return answers;
 };
