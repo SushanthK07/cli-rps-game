@@ -1,20 +1,21 @@
 {
   "name": "cli-rps-game",
   "type": "module",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.3",
+  "description": "A command-line interface (CLI) rock-paper-scissors game for interactive entertainment.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [
-    "cli",
-    "rock",
-    "paper",
-    "scissors",
-    "game"
+    "rock-paper-scissors",
+    "cli-game",
+    "command-line",
+    "interactive",
+    "entertainment",
+    "single-player"
   ],
-  "author": "",
+  "author": "SushanthK07",
   "license": "ISC",
   "bin": "./index.js",
   "dependencies": {
