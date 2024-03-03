@@ -1,7 +1,7 @@
 {
   "name": "cli-rps-game",
   "type": "module",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A command-line interface (CLI) rock-paper-scissors game for interactive entertainment.",
   "main": "index.js",
   "scripts": {
@@ -22,5 +22,10 @@
     "chalk": "^5.3.0",
     "chalk-animation": "^2.0.3",
     "inquirer": "^9.2.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SushanthK07/cli-rps-game"
+  },
+  "homepage": "https://github.com/SushanthK07/cli-rps-game"
 }
