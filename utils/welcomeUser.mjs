@@ -1,20 +1,19 @@
 import chalkAnimation from "chalk-animation";
-
-const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+import sleep from "./sleep.mjs";
 
 const welcomeUser = async (userDetails) => {
-  const greetUser = chalkAnimation.rainbow(`Hi ${userDetails.username} \n`);
-  await _sleep(1000);
+  const greetUser = chalkAnimation.karaoke(`Hi ${userDetails.username} \n`);
+  await sleep(1500);
   greetUser.stop();
 
   const welcome = chalkAnimation.rainbow(
     "Welcome to the Rock, Paper, Scissors game! \n"
   );
-  await _sleep(1000);
+  await sleep(2000);
   welcome.stop();
 
-  const startGame = chalkAnimation.rainbow("Let's play! \n");
-  await _sleep(1000);
+  const startGame = chalkAnimation.neon("Let's play! \n");
+  await sleep(2000);
   startGame.stop();
 };
 

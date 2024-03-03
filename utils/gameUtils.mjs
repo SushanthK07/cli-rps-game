@@ -1,5 +1,6 @@
-import chalk from "chalk";
+import chalkAnimation from "chalk-animation";
 import inquirer from "inquirer";
+import sleep from "./sleep.mjs";
 
 const OPTIONS = ["Rock", "Paper", "Scissors"];
 
@@ -28,15 +29,15 @@ const _doesUserWantToPlayAgain = async () => {
 
 const _determineWinner = (userDetails, userSelection, computerSelection) => {
   if (userSelection === computerSelection) {
-    return `Hey ${userDetails.username}, it's a tie! You both chose ${userSelection}!`;
+    return `Hey ${userDetails.username}, it's a tie! You both chose ${userSelection}! \n`;
   } else if (
     (userSelection === "Rock" && computerSelection === "Scissors") ||
     (userSelection === "Paper" && computerSelection === "Rock") ||
     (userSelection === "Scissors" && computerSelection === "Paper")
   ) {
-    return `Hey ${userDetails.username}, you win! ${userSelection} beats ${computerSelection}!`;
+    return `Hey ${userDetails.username}, you win! ${userSelection} beats ${computerSelection}! \n`;
   } else {
-    return `Hey ${userDetails.username}, you lose! ${computerSelection} beats ${userSelection}!`;
+    return `Hey ${userDetails.username}, you lose! ${computerSelection} beats ${userSelection}! \n`;
   }
 };
 
@@ -48,14 +49,23 @@ const startGame = async (userDetails) => {
     userSelection,
     computerSelection
   );
-  console.log(chalk.bgYellow(result));
+
+  const resultAnimation = chalkAnimation.karaoke(result);
+  await sleep(3000);
+  resultAnimation.stop();
 
   const playAgain = await _doesUserWantToPlayAgain();
   if (playAgain) {
-    console.log(chalk.bgMagentaBright("Let's play again!"));
+    const playAgainAnimation = chalkAnimation.neon("Let's play again! \n");
+    await sleep(2000);
+    playAgainAnimation.stop();
     await startGame(userDetails);
   } else {
-    console.log(chalk.bgRed("Goodbye!"));
+    const byeAnimation = chalkAnimation.glitch(
+      `Goodbye ${userDetails.username}!`
+    );
+    await sleep(1000);
+    byeAnimation.stop();
   }
 };
 
