@@ -1,7 +1,7 @@
 {
   "name": "cli-rps-game",
   "type": "module",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A command-line interface (CLI) rock-paper-scissors game for interactive entertainment.",
   "main": "index.js",
   "scripts": {
